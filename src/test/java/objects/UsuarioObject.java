@@ -22,6 +22,7 @@ public class UsuarioObject {
 
     //Mensagens sucesso
     public static String msgSucessoIncluir = "Usuário criado com sucesso!";
+    public static String msgSucessoExcluir = "Usuário excluído com sucesso!";
     public static String msgEmailRepetido = "O campo email já está sendo utilizado.";
     public static String msgProntuarioRepetido = "O campo prontuario já está sendo utilizado.";
 
