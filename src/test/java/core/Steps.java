@@ -34,8 +34,7 @@ public class Steps {
     }
 
     public Steps escrever(String id_campo, String texto) {
-        escrever(By.id(id_campo), texto);
-        return this;
+        return escrever(By.id(id_campo), texto);
     }
 
     /*** BOTÃO ***/
@@ -59,9 +58,8 @@ public class Steps {
 
     /*** CAMBO BOX ***/
     public Steps clicarCombo(String xpath, String xpathSubmenu) {
-        clicarBotao(By.xpath(xpath));
-        clicarBotao(By.xpath(xpathSubmenu));
-        return this;
+        return clicarBotao(By.xpath(xpath))
+                .clicarBotao(By.xpath(xpathSubmenu));
     }
 
     /*** TABELA ***/
