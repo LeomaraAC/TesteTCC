@@ -72,7 +72,7 @@ public class Steps {
         int idLinha = obterIndiceLinha(valor,tabela,idColuna);
 
         WebElement celula = tabela.findElement(By.xpath(".//tr["+idLinha+"]/td["+idColunaBotao+"]"));
-
+        celula.findElement(By.xpath(xpathByClick)).click();
         return this;
     }
 
