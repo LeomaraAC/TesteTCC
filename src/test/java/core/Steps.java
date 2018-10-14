@@ -38,16 +38,6 @@ public class Steps {
         return this;
     }
 
-    /*** TEXTO ***/
-//    public String obterTexto(String xpath) {
-//        WebElement element = DriverFactory.getDriver().findElement(By.xpath(xpath));
-//        Wait.getWait().until(ExpectedConditions.elementToBeClickable(element));
-//        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
-//        WebElement botaoPagina = DriverFactory.getDriver().findElement(By.xpath(xpath));
-//        js.executeScript("arguments[0].scrollIntoView();", botaoPagina);
-//        return element.getText();
-//    }
-
     /*** BOTÃO ***/
     public Steps clicarBotao(By by) {
         WebElement element = getDriver().findElement(by);
