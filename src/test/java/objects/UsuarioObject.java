@@ -8,6 +8,7 @@ public class UsuarioObject {
     public static String senhaUser = "secret";
     public static String emailRepetido = "master@ifsp.com";
     public static String prontuarioRepetido = "cv1002000";
+    public static String prontuarioExcluir = "cv1102000";
 
     //IDs e Xpath
     public static String idProntuario = "prontuario";
