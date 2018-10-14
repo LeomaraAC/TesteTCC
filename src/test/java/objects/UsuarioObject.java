@@ -21,7 +21,7 @@ public class UsuarioObject {
     public static String xpathTabela = "//*[@id='tabelaListagem']//table";
 
     //Mensagens sucesso
-    public static String msgSucesso = "Usuário criado com sucesso!";
+    public static String msgSucessoIncluir = "Usuário criado com sucesso!";
     public static String msgEmailRepetido = "O campo email já está sendo utilizado.";
     public static String msgProntuarioRepetido = "O campo prontuario já está sendo utilizado.";
 
