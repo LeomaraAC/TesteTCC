@@ -111,4 +111,10 @@ public class Steps {
         return this;
     }
 
+    /*** Filtrar ***/
+    public Steps filtrar(String xpathCampo, String valor, String idBtnFiltro) {
+        return escrever(By.xpath(xpathCampo),valor)
+                .clicarBotao(idBtnFiltro);
+    }
+
 }
