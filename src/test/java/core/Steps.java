@@ -63,7 +63,7 @@ public class Steps {
     }
 
     /*** TABELA ***/
-    public Steps  obterCelula(int idColunaBotao, String colunaBusca, String valor, String xpathTabela) {
+    public Steps clicarCelula(int idColunaBotao, String colunaBusca, String valor, String xpathTabela, String xpathByClick) {
         getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathTabela)));
         WebElement tabela = getDriver().findElement(By.xpath(xpathTabela));
 
