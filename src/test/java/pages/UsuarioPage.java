@@ -5,7 +5,6 @@ import core.Menu;
 import core.Steps;
 import org.junit.ComparisonFailure;
 import org.junit.Test;
-import until.Variables;
 
 import static objects.UsuarioObject.*;
 import static until.Variables.*;
@@ -25,7 +24,7 @@ public class UsuarioPage extends Base {
                     .escrever(idSenha, senhaUser)
                     .escrever(idSenhaConfirmation, senhaUser)
                     .clicarBotao(idBtnSalvar)
-                    .assertMSG(xpathMensagemSucesso,msgSucesso);
+                    .assertMSG(xpathMensagemSucesso, msgSucessoIncluir);
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
