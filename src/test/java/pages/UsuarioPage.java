@@ -4,7 +4,9 @@ import core.Base;
 import core.Menu;
 import core.Steps;
 import org.junit.ComparisonFailure;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 import static objects.UsuarioObject.*;
 import static until.Variables.*;
@@ -82,6 +84,31 @@ public class UsuarioPage extends Base {
             status = "Fail";
             error = ex.getMessage();
         }
+    }
+
+    @Ignore
+//    @Test
+    public void testEditarUsuario() {
+        try {
+            menu.acessarTelaUsuario();
+            new Steps()
+                    .filtrar(xpathBusca,prontuarioEditar,idBtnFiltrar)
+                    .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar)
+                    .limpar(By.id(idNome))
+                    .escrever(idNome, nomeEditadar)
+                    .limpar(By.id(idEmail))
+                    .escrever(idEmail, emailEditadar)
+                    .clicarBotao(idBtnSalvar)
+                    .assertMSG(xpathMensagemSucesso, msgSucessoEditar);
+            status = "OK";
+        }catch (ComparisonFailure ex) {
+            status = "NOK";
+            error = ex.getMessage();
+        } catch (Exception ex) {
+            status = "FAIL";
+            error = ex.getMessage();
+        }
+
     }
 
     @Test
