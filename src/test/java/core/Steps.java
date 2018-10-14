@@ -4,29 +4,30 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import until.DriverFactory;
-import until.Wait;
+import static org.junit.Assert.assertEquals;
+import static until.DriverFactory.getDriver;
+import static until.Wait.getWait;
 
 import java.util.List;
 
 public class Steps {
 
-    /********* TEXT FIELD ************/
+    /*** TEXT FIELD ***/
     public Steps limpar(By by) {
-        WebElement element = DriverFactory.getDriver().findElement(by);
-        Wait.getWait().until(ExpectedConditions.elementToBeClickable(element));
-        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
-        WebElement botaoPagina = DriverFactory.getDriver().findElement(by);
+        WebElement element = getDriver().findElement(by);
+        getWait().until(ExpectedConditions.elementToBeClickable(element));
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        WebElement botaoPagina = getDriver().findElement(by);
         js.executeScript("arguments[0].scrollIntoView();", botaoPagina);
         element.clear();
         return this;
 
     }
     public Steps escrever(By by, String texto) {
-        WebElement element = DriverFactory.getDriver().findElement(by);
-        Wait.getWait().until(ExpectedConditions.elementToBeClickable(element));
-        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
-        WebElement botaoPagina = DriverFactory.getDriver().findElement(by);
+        WebElement element = getDriver().findElement(by);
+        getWait().until(ExpectedConditions.elementToBeClickable(element));
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        WebElement botaoPagina = getDriver().findElement(by);
         js.executeScript("arguments[0].scrollIntoView();", botaoPagina);
         element.sendKeys(texto);
         return this;
@@ -37,7 +38,7 @@ public class Steps {
         return this;
     }
 
-    /********* TEXTO ************/
+    /*** TEXTO ***/
 //    public String obterTexto(String xpath) {
 //        WebElement element = DriverFactory.getDriver().findElement(By.xpath(xpath));
 //        Wait.getWait().until(ExpectedConditions.elementToBeClickable(element));
@@ -47,12 +48,12 @@ public class Steps {
 //        return element.getText();
 //    }
 
-    /********* BOTÃO ************/
+    /*** BOTÃO ***/
     public Steps clicarBotao(By by) {
-        WebElement element = DriverFactory.getDriver().findElement(by);
-        Wait.getWait().until(ExpectedConditions.elementToBeClickable(element));
-        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
-        WebElement botaoPagina = DriverFactory.getDriver().findElement(by);
+        WebElement element = getDriver().findElement(by);
+        getWait().until(ExpectedConditions.elementToBeClickable(element));
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        WebElement botaoPagina = getDriver().findElement(by);
         js.executeScript("arguments[0].scrollIntoView();", botaoPagina);
         element.click();
         return this;
@@ -71,10 +72,10 @@ public class Steps {
         return clicarBotao(By.xpath(xpath));
     }
 
-    /********* TABELA ************/
+    /*** TABELA ***/
     public Steps  obterCelula(int idColunaBotao, String colunaBusca, String valor, String xpathTabela) {
-        Wait.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathTabela)));
-        WebElement tabela = DriverFactory.getDriver().findElement(By.xpath(xpathTabela));
+        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathTabela)));
+        WebElement tabela = getDriver().findElement(By.xpath(xpathTabela));
 
         int idColuna = obterIndiceColuna(colunaBusca, tabela);
 
