@@ -27,5 +27,6 @@ public class Variables {
 
     /***IDs***/
     public static String idBtnSalvar = "salvar";
+    public static String idBtnFiltrar = "btnInputFiltrar";
 
 }
