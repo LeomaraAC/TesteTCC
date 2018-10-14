@@ -18,6 +18,7 @@ public class UsuarioObject {
     public static String idSenhaConfirmation = "senha_confirmation";
     public static String xpathMultiselect = "//div[@class='multiselect__select']";
     public static String xpathCombo = "//*[@class='multiselect__content']//li[*='Master']";
+    public static String xpathTabela = "//*[@id='tabelaListagem']//table";
 
     //Mensagens sucesso
     public static String msgSucesso = "Usuário criado com sucesso!";
