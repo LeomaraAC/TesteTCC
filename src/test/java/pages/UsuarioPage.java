@@ -90,7 +90,7 @@ public class UsuarioPage extends Base {
             menu.acessarTelaUsuario();
             new Steps()
                     .filtrar(xpathBusca,prontuarioExcluir, idBtnFiltrar)
-                    .clicarCelula(1,colunaBusca,prontuarioExcluir,xpathTabela,xpathByClickExcluir)
+                    .clicarCelula(idColunaExcluir,colunaBusca,prontuarioExcluir,xpathTabela,xpathByClickExcluir)
                     .assertMSG(xpathMensagemSucesso,msgSucessoExcluir);
             status = "OK";
         }catch (ComparisonFailure ex) {
