@@ -29,4 +29,6 @@ public class Variables {
     public static String idBtnSalvar = "salvar";
     public static String idBtnFiltrar = "btnInputFiltrar";
 
+    //Xpath
+    public static String xpathBusca = "//div[@class='card-body']//input[@name='busca']";
 }
