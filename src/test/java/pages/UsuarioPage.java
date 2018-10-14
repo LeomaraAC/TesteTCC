@@ -83,4 +83,23 @@ public class UsuarioPage extends Base {
             error = ex.getMessage();
         }
     }
+
+    @Test
+    public void testExcluirUsuario() {
+        try {
+            menu.acessarTelaUsuario();
+            new Steps()
+                    .filtrar(xpathBusca,prontuarioExcluir, idBtnFiltrar)
+                    .clicarCelula(1,colunaBusca,prontuarioExcluir,xpathTabela,xpathByClickExcluir)
+                    .assertMSG(xpathMensagemSucesso,msgSucessoExcluir);
+            status = "OK";
+        }catch (ComparisonFailure ex) {
+            status = "NOK";
+            error = ex.getMessage();
+        } catch (Exception ex) {
+            status = "FAIL";
+            error = ex.getMessage();
+        }
+
+    }
 }
