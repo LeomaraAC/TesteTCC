@@ -26,5 +26,10 @@ public class UsuarioObject {
     public static String msgEmailRepetido = "O campo email já está sendo utilizado.";
     public static String msgProntuarioRepetido = "O campo prontuario já está sendo utilizado.";
 
+    //Tabela
     public static String colunaBusca = "Prontuário";
+    public static String xpathByClickExcluir = ".//i";
+
+
+
 }
