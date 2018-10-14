@@ -62,14 +62,16 @@ public class Steps {
         return clicarBotao(By.id(id));
     }
 
-    /********* BOTÃO MENU ************/
+    /*** BOTÃO MENU ***/
     public Steps clicarBotaoMenu(String xpath){
         return clicarBotao(By.xpath(xpath));
     }
 
-    /********* CAMBO BOX ************/
-    public Steps clicarCombo(String xpath) {
-        return clicarBotao(By.xpath(xpath));
+    /*** CAMBO BOX ***/
+    public Steps clicarCombo(String xpath, String xpathSubmenu) {
+        clicarBotao(By.xpath(xpath));
+        clicarBotao(By.xpath(xpathSubmenu));
+        return this;
     }
 
     /*** TABELA ***/
