@@ -111,4 +111,16 @@ public class Steps {
         }
         return idLinhas;
     }
+
+    /*** Asserts ***/
+    public Steps assertMSG(String xpath, String mensagem) {
+        WebElement mensagemSucesso = getDriver().findElement(By.xpath(xpath));
+        getWait().until(ExpectedConditions.elementToBeClickable(mensagemSucesso));
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("arguments[0].scrollIntoView();", mensagemSucesso);
+        String verificarMensagemSucesso = mensagemSucesso.getText();
+        assertEquals(mensagem, verificarMensagemSucesso);
+        return this;
+    }
+
 }
