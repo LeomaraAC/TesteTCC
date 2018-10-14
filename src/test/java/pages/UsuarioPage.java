@@ -38,6 +38,30 @@ public class UsuarioPage extends Base {
     }
 
     @Test
+    public void testInserirComProntuarioRepetido() {
+        try {
+            menu.acessarTelaInserirUsuario();
+            new Steps()
+                    .escrever(idProntuario, prontuarioRepetido)
+                    .escrever(idNome, nome)
+                    .escrever(idEmail, email)
+                    .clicarCombo(xpathMultiselect, xpathCombo)
+                    .escrever(idSenha, senhaUser)
+                    .escrever(idSenhaConfirmation, senhaUser)
+                    .clicarBotao(idBtnSalvar)
+                    .assertMSG(xpathMensagemErro,msgProntuarioRepetido);
+            status = "OK";
+        }catch (ComparisonFailure ex) {
+            status = "NOK";
+            error = ex.getMessage();
+        } catch (Exception ex) {
+            status = "FAIL";
+            error = ex.getMessage();
+        }
+
+    }
+
+    @Test
     public void testInserirComEmailRepetido() {
         try {
             menu.acessarTelaInserirUsuario();
