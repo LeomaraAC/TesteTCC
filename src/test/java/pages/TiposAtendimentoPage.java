@@ -65,7 +65,6 @@ public class TiposAtendimentoPage extends Base {
         try {
             menu.acessarTelaInserirTipo();
             new Steps()
-                    .escrever(idDescricao, "")
                     .clicarBotao(idBtnSalvar)
                     .assertMSG(xpathErroCampoDescricao, msgErroTipoVazio);
             status = "OK";
