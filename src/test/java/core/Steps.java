@@ -63,10 +63,11 @@ public class Steps {
     }
 
     /*** TABELA ***/
-    public Steps clicarCelula(int idColunaBotao, String colunaBusca, String valor, String xpathTabela, String xpathByClick) {
+    public Steps clicarCelula(int idColunaBotao, String colunaBusca, String valor, String xpathTabela, String xpathByClick) throws InterruptedException {
         getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathTabela)));
         WebElement tabela = getDriver().findElement(By.xpath(xpathTabela));
 
+        esperar(200);
         int idColuna = obterIndiceColuna(colunaBusca, tabela);
 
         int idLinha = obterIndiceLinha(valor,tabela,idColuna);
