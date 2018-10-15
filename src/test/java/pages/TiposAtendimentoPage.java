@@ -6,7 +6,7 @@ import core.Steps;
 import org.junit.ComparisonFailure;
 import org.junit.Ignore;
 import org.junit.Test;
-import until.Variables;
+import org.openqa.selenium.By;
 
 import static objects.TiposAtendimentoObject.*;
 import static until.Variables.*;
@@ -47,7 +47,7 @@ public class TiposAtendimentoPage extends Base {
         try {
             menu.acessarTelaInserirTipo();
             new Steps()
-                    .escrever(idDescricao, descricaoRepetida)
+                    .escrever(idDescricao, descricaoExistente)
                     .clicarBotao(idBtnSalvar)
                     .assertMSG(xpathMensagemErro, msgErroTipoRepetido);
             status = "OK";
