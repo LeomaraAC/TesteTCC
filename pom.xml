@@ -7,6 +7,9 @@
     <groupId>ifsp.leomara.tcc</groupId>
     <artifactId>TesteTcc</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <build>
         <testSourceDirectory>src</testSourceDirectory>
@@ -21,6 +24,7 @@
                     </includes>
                     <parallel>all</parallel>
                     <threadCount>1</threadCount>
+
                 </configuration>
             </plugin>
         </plugins>
