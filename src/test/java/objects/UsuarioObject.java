@@ -21,7 +21,6 @@ public class UsuarioObject {
     public static String idSenhaConfirmation = "senha_confirmation";
     public static String xpathMultiselect = "//div[@class='multiselect__select']";
     public static String xpathCombo = "//*[@class='multiselect__content']//li[*='Master']";
-    public static String xpathTabela = "//*[@id='tabelaListagem']//table";
 
     //Mensagens sucesso
     public static String msgSucessoIncluir = "Usuário criado com sucesso!";
@@ -32,11 +31,6 @@ public class UsuarioObject {
 
     //Tabela
     public static String colunaBusca = "Prontuário";
-    public static int idColunaExcluir = 1;
-    public static int idColunaEditar = 2;
-    public static String xpathByClickExcluir = ".//i";
-    public static String xpathByClickEditar = ".//a";
-
 
 
 }

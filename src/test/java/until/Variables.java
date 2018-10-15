@@ -31,4 +31,13 @@ public class Variables {
 
     //Xpath
     public static String xpathBusca = "//div[@class='card-body']//input[@name='busca']";
+
+    //Tabela
+    public static String xpathTabela = "//*[@id='tabelaListagem']//table";
+    public static int idColunaExcluir = 1;
+    public static int idColunaEditar = 2;
+    public static String xpathByClickExcluir = ".//i";
+    public static String xpathByClickEditar = ".//a";
+    public static String xpathMsgTabelaSemElemento = "//*[@id='tabelaListagem']//table//tbody//div[@class='v-alert red']/div";
+    public static String msgTabelaSemElemento = "Nenhum dado encontrado :(";
 }
