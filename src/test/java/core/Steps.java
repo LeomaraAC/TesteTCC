@@ -117,4 +117,9 @@ public class Steps {
                 .clicarBotao(idBtnFiltro);
     }
 
+    public Steps esperar(int tempo) throws InterruptedException {
+        Thread.sleep(tempo);
+        return this;
+    }
+
 }
