@@ -27,6 +27,7 @@ public class Variables {
 
     /***IDs***/
     public static String idBtnSalvar = "salvar";
+    public static String idBtnLimpar = "limpar";
     public static String idBtnFiltrar = "btnInputFiltrar";
 
     //Xpath
