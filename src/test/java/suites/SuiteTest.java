@@ -3,12 +3,14 @@ package suites;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import pages.TiposAtendimentoPage;
 import pages.UsuarioPage;
 import until.DriverFactory;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        UsuarioPage.class
+        UsuarioPage.class,
+        TiposAtendimentoPage.class
 })
 public class SuiteTest {
     @AfterClass
