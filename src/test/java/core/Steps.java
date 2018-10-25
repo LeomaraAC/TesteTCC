@@ -2,6 +2,7 @@ package core;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import static org.junit.Assert.assertEquals;
@@ -33,6 +34,15 @@ public class Steps {
         elementText.sendKeys(texto);
         return this;
     }
+    public Steps substituirValor(String xpath, String texto) {
+        WebElement element = getDriver().findElement(By.xpath(xpath));
+        getWait().until(ExpectedConditions.elementToBeClickable(element));
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        WebElement elementText = getDriver().findElement(By.xpath(xpath));
+        js.executeScript("arguments[0].scrollIntoView();", elementText);
+        elementText.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
+        elementText.sendKeys(texto);
+        return this;
     }
 
     /*** BOTÃO ***/
