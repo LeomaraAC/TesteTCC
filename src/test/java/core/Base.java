@@ -84,4 +84,10 @@ public class Base {
 
         }
     }
+    protected void getLog(Throwable ex) {
+        StringWriter sw = new StringWriter();
+        ex.printStackTrace(new PrintWriter(sw));
+        stackTrace = sw.toString();
+        error = ex.getMessage();
+    }
 }
