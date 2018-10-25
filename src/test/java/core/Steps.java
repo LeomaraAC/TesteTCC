@@ -13,53 +13,48 @@ import java.util.List;
 public class Steps {
 
     /*** TEXT FIELD ***/
-    public Steps limpar(By by) {
-        WebElement element = getDriver().findElement(by);
+    public Steps limpar(String xpath) {
+        WebElement element = getDriver().findElement(By.xpath(xpath));
         getWait().until(ExpectedConditions.elementToBeClickable(element));
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        WebElement botaoPagina = getDriver().findElement(by);
-        js.executeScript("arguments[0].scrollIntoView();", botaoPagina);
-        element.clear();
+        WebElement elementClear = getDriver().findElement(By.xpath(xpath));
+        js.executeScript("arguments[0].scrollIntoView();", elementClear);
+        elementClear.clear();
         return this;
 
     }
-    public Steps escrever(By by, String texto) {
-        WebElement element = getDriver().findElement(by);
+
+    public Steps escrever(String xpath, String texto) {
+        WebElement element = getDriver().findElement(By.xpath(xpath));
         getWait().until(ExpectedConditions.elementToBeClickable(element));
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        WebElement botaoPagina = getDriver().findElement(by);
-        js.executeScript("arguments[0].scrollIntoView();", botaoPagina);
-        element.sendKeys(texto);
+        WebElement elementText = getDriver().findElement(By.xpath(xpath));
+        js.executeScript("arguments[0].scrollIntoView();", elementText);
+        elementText.sendKeys(texto);
         return this;
     }
-
-    public Steps escrever(String id_campo, String texto) {
-        return escrever(By.id(id_campo), texto);
     }
 
     /*** BOTÃO ***/
-    public Steps clicarBotao(By by) {
-        WebElement element = getDriver().findElement(by);
+    public Steps clicarBotao(String xpath) {
+        WebElement element = getDriver().findElement(By.xpath(xpath));
         getWait().until(ExpectedConditions.elementToBeClickable(element));
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        WebElement botaoPagina = getDriver().findElement(by);
+        WebElement botaoPagina = getDriver().findElement(By.xpath(xpath));
         js.executeScript("arguments[0].scrollIntoView();", botaoPagina);
         element.click();
         return this;
     }
-    public Steps clicarBotao(String id) {
-        return clicarBotao(By.id(id));
-    }
 
     /*** BOTÃO MENU ***/
     public Steps clicarBotaoMenu(String xpath){
-        return clicarBotao(By.xpath(xpath));
+        return clicarBotao(xpath);
     }
 
     /*** CAMBO BOX ***/
     public Steps clicarCombo(String xpath, String xpathSubmenu) {
-        return clicarBotao(By.xpath(xpath))
-                .clicarBotao(By.xpath(xpathSubmenu));
+        return clicarBotao(xpath)
+                .clicarBotao(xpathSubmenu);
     }
 
     /*** TABELA ***/
@@ -113,9 +108,9 @@ public class Steps {
     }
 
     /*** Filtrar ***/
-    public Steps filtrar(String xpathCampo, String valor, String idBtnFiltro) {
-        return escrever(By.xpath(xpathCampo),valor)
-                .clicarBotao(idBtnFiltro);
+    public Steps filtrar(String xpathCampo, String valor, String xpathBtnFiltro) {
+        return escrever(xpathCampo,valor)
+                .clicarBotao(xpathBtnFiltro);
     }
 
     public Steps esperar(int tempo) throws InterruptedException {
