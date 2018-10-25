@@ -127,6 +127,30 @@ public class UsuarioPage extends Base {
     }
 
     @Test
+    public void testEditarUsuarioVazio() {
+        try {
+            menu.acessarTelaUsuario();
+            new Steps()
+                    .filtrar(xpathBusca,prontuarioAuxiliar,idBtnFiltrar)
+                    .clicarCelula(idColunaEditar,colunaBusca,prontuarioAuxiliar,xpathTabela,xpathByClickEditar)
+                    .clicarBotao(idBtnLimpar)
+                    .removerFocus(idProntuario)
+                    .clicarBotao(idBtnSalvar)
+                    .assertMSG(xpathErroCampoNome, msgNomeVazio)
+                    .assertMSG(xpathErroCampoProntuario, msgProntuarioVazio)
+                    .assertMSG(xpathErroCampoEmail, msgEmailVazio)
+                    .assertMSG(xpathErroCampoGrupo, msgGrupoVazio);
+            status = "OK";
+        }catch (ComparisonFailure ex) {
+            status = "NOK";
+            getLog(ex);
+        } catch (Exception ex) {
+            status = "FAIL";
+            getLog(ex);
+        }
+    }
+
+    @Test
     public void testExcluirUsuario() {
         try {
             menu.acessarTelaUsuario();
