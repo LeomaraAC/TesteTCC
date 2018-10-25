@@ -169,6 +169,27 @@ public class UsuarioPage extends Base {
             getLog(ex);
         }
     }
+
+    @Test
+    public void testEditarUsuarioProntuarioRepetido() {
+        try {
+            menu.acessarTelaUsuario();
+            new Steps()
+                    .filtrar(xpathBusca,prontuarioEditar,idBtnFiltrar)
+                    .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar)
+                    .substituirValor(idProntuario, prontuarioRepetido)
+                    .clicarBotao(idBtnSalvar)
+                    .assertMSG(xpathMensagemErro, msgProntuarioRepetido);
+            status = "OK";
+        }catch (ComparisonFailure ex) {
+            status = "NOK";
+            getLog(ex);
+        } catch (Exception ex) {
+            status = "FAIL";
+            getLog(ex);
+        }
+    }
+
     @Test
     public void testExcluirUsuario() {
         try {
