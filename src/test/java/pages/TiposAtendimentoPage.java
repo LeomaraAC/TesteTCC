@@ -13,15 +13,6 @@ import static until.Variables.*;
 public class TiposAtendimentoPage extends Base {
     private Menu menu = new Menu();
 
-    /*new Steps()
-                    .escrever(idProntuario, prontuario)
-                    .escrever(idNome, nome)
-                    .escrever(idEmail, email)
-                    .clicarCombo(xpathMultiselect, xpathCombo)
-                    .escrever(idSenha, senhaUser)
-                    .escrever(idSenhaConfirmation, senhaUser)
-                    .clicarBotao(idBtnSalvar)
-                    .assertMSG(xpathMensagemSucesso, msgSucessoIncluir);*/
     @Test
     public void testInserirTipo() {
         try {
