@@ -105,6 +105,26 @@ public class UsuarioPage extends Base {
         }
 
     }
+    @Test
+    public void testEditarUsuarioSemGrupo() {
+        try {
+            menu.acessarTelaUsuario();
+            new Steps()
+                    .filtrar(xpathBusca,prontuarioAuxiliar,idBtnFiltrar)
+                    .clicarCelula(idColunaEditar,colunaBusca,prontuarioAuxiliar,xpathTabela,xpathByClickEditar)
+                    .clicarCombo(xpathMultiselect, xpathCombo)
+                    .clicarBotao(idBtnSalvar)
+                    .assertMSG(xpathErroCampoGrupo, msgGrupoVazio);
+            status = "OK";
+        }catch (ComparisonFailure ex) {
+            status = "NOK";
+            getLog(ex);
+        } catch (Exception ex) {
+            status = "FAIL";
+            getLog(ex);
+        }
+
+    }
 
     @Test
     public void testExcluirUsuario() {
