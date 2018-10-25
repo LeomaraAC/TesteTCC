@@ -4,9 +4,7 @@ import core.Base;
 import core.Menu;
 import core.Steps;
 import org.junit.ComparisonFailure;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.openqa.selenium.By;
 
 import static objects.UsuarioObject.*;
 import static until.Variables.*;
@@ -30,10 +28,10 @@ public class UsuarioPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -54,10 +52,10 @@ public class UsuarioPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -76,13 +74,12 @@ public class UsuarioPage extends Base {
                     .clicarBotao(idBtnSalvar)
                     .assertMSG(xpathMensagemErro, msgEmailRepetido);
             status = "OK";
-        } catch (
-                ComparisonFailure ex) {
+        } catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "Fail";
-            error = ex.getMessage();
+            getLog(ex);
         }
     }
 
@@ -122,10 +119,10 @@ public class UsuarioPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
