@@ -56,6 +56,15 @@ public class Steps {
         return this;
     }
 
+    public Steps removerFocus(String xpath) {
+        WebElement element = getDriver().findElement(By.xpath(xpath));
+        getWait().until(ExpectedConditions.elementToBeClickable(element));
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        WebElement botaoPagina = getDriver().findElement(By.xpath(xpath));
+        js.executeScript("arguments[0].scrollIntoView();", botaoPagina);
+        element.sendKeys(Keys.TAB);
+        return this;
+    }
     /*** BOTÃO MENU ***/
     public Steps clicarBotaoMenu(String xpath){
         return clicarBotao(xpath);
