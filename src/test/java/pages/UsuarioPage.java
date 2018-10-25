@@ -83,27 +83,25 @@ public class UsuarioPage extends Base {
         }
     }
 
-    @Ignore
-//    @Test
-    public void testEditarUsuario() {
+
+    @Test
+    public void testEditarUsuarioNomeEmail() {
         try {
             menu.acessarTelaUsuario();
             new Steps()
                     .filtrar(xpathBusca,prontuarioEditar,idBtnFiltrar)
                     .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar)
-                    .limpar(By.id(idNome))
-                    .escrever(idNome, nomeEditadar)
-                    .limpar(By.id(idEmail))
-                    .escrever(idEmail, emailEditadar)
+                    .substituirValor(idNome, nomeEditadar)
+                    .substituirValor(idEmail, emailEditadar)
                     .clicarBotao(idBtnSalvar)
                     .assertMSG(xpathMensagemSucesso, msgSucessoEditar);
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
