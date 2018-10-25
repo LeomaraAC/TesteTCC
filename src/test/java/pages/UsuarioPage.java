@@ -151,6 +151,25 @@ public class UsuarioPage extends Base {
     }
 
     @Test
+    public void testEditarUsuarioSemProntuario() {
+        try {
+            menu.acessarTelaUsuario();
+            new Steps()
+                    .filtrar(xpathBusca,prontuarioEditar,idBtnFiltrar)
+                    .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar)
+                    .substituirValor(idProntuario, "")
+                    .clicarBotao(idBtnSalvar)
+                    .assertMSG(xpathErroCampoProntuario, msgProntuarioVazio);
+            status = "OK";
+        }catch (ComparisonFailure ex) {
+            status = "NOK";
+            getLog(ex);
+        } catch (Exception ex) {
+            status = "FAIL";
+            getLog(ex);
+        }
+    }
+    @Test
     public void testExcluirUsuario() {
         try {
             menu.acessarTelaUsuario();
