@@ -25,6 +25,7 @@ public class Base {
     protected String className = this.getClass().getName();
     protected String status = "";
     protected String error = "";
+    private String stackTrace = "";
 
     @Before
     public void inicializa () {
@@ -41,18 +42,22 @@ public class Base {
     }
 
 
-    public void print(){
-        String arquivo = testName.getMethodName();
+    private String getPath(String arquivo) {
         Date date = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("yyyy_MM_dd-HH_mm_ss");
         String formattedDate = df.format(date);
 
-        File screenshot = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
         String datesplit[] = formattedDate.split("-");
         String horas[] = datesplit[1].split("_");
 
 
-        String path = "target\\screenshot\\"+className+"\\" + arquivo + "\\" + datesplit[0] + "\\" + status + "\\" + horas[0] + "h" + horas[1] + "m" + horas[2] + "s" + "\\";
+        return "target\\screenshot\\"+className+"\\" + arquivo + "\\" + datesplit[0] + "\\" + status + "\\" + horas[0] + "h" + horas[1] + "m" + horas[2] + "s" + "\\";
+    }
+
+    protected void print(){
+        String arquivo = testName.getMethodName();
+        String path = getPath(arquivo);
+        File screenshot = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(screenshot, new File(path + arquivo + ".png"));
         } catch (Exception e) {
@@ -60,11 +65,18 @@ public class Base {
         }
         if (!status.equals("OK")) {
             try {
-                Writer writer = new BufferedWriter(
+                Writer logError = new BufferedWriter(
                         new OutputStreamWriter(
                                 new FileOutputStream(path + "Error.log"), "utf-8"));
-                writer.write(error);
-                writer.close();
+                logError.write(error);
+                logError.close();
+
+                Writer logStackTrace = new BufferedWriter(
+                        new OutputStreamWriter(
+                                new FileOutputStream(path + "logStackTrace.log"), "utf-8"));
+                logStackTrace.write(stackTrace);
+                logStackTrace.close();
+
                 System.out.println("Problemas na função " + arquivo + " da classe " + className);
             }catch (Exception ex) {
                 System.out.println("Houveram problemas ao escrever o arquivo de log: " + ex.getMessage());
