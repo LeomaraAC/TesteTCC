@@ -15,10 +15,11 @@ public class TiposAtendimentoObject {
     public static String descricaoEditarAlterado = "tipo editar Alterado";
 
     //IDs e Xpath
-    public static String idDescricao = "descricao";
+//    public static String idDescricao = "descricao";
+    public static String idDescricao = "//input[contains(@id, 'descricao')]";
     public static String xpathErroCampoDescricao = "//input[@id='descricao']/../../div[@class = 'erro']";
 
-    //Mensagens sucesso
+    //Mensagens
     public static String msgSucessoIncluir = "Tipo de atendimento criado com sucesso!";
     public static String msgSucessoExcluir = "Tipo de atendimento excluído com sucesso!";
     public static String msgSucessoEditar = "Tipo de atendimento editado com sucesso!";

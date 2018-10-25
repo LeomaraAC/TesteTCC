@@ -26,9 +26,9 @@ public class Variables {
     public static String xpathMensagemErro = "//div[@class='v-snack__wrapper red']/div[@class='v-snack__content']/span";
 
     /***IDs***/
-    public static String idBtnSalvar = "salvar";
-    public static String idBtnLimpar = "limpar";
-    public static String idBtnFiltrar = "btnInputFiltrar";
+    public static String idBtnSalvar = "//button[contains(@id, 'salvar')]";
+    public static String idBtnLimpar = "//button[contains(@id, 'limpar')]";
+    public static String idBtnFiltrar = "//div[contains(@id, 'btnInputFiltrar')]";
 
     //Xpath
     public static String xpathBusca = "//div[@class='card-body']//input[@name='busca']";

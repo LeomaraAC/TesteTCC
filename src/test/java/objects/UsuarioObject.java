@@ -14,11 +14,11 @@ public class UsuarioObject {
     public static String emailEditadar = "editar.alterado@ifsp.com";
 
     //IDs e Xpath
-    public static String idProntuario = "prontuario";
-    public static String idNome = "nome";
-    public static String idEmail = "email";
-    public static String idSenha = "senha";
-    public static String idSenhaConfirmation = "senha_confirmation";
+    public static String idProntuario = "//input[contains(@id, 'prontuario')]";
+    public static String idNome = "//input[contains(@id, 'nome')]";
+    public static String idEmail = "//input[contains(@id, 'email')]";
+    public static String idSenha = "//input[contains(@id, 'senha')]";
+    public static String idSenhaConfirmation = "//input[contains(@id, 'senha_confirmation')]";
     public static String xpathMultiselect = "//div[@class='multiselect__select']";
     public static String xpathCombo = "//*[@class='multiselect__content']//li[*='Master']";
 
