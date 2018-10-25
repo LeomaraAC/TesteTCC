@@ -5,6 +5,8 @@ import until.DriverFactory;
 import until.Propriedades;
 import until.Variables;
 
+import static until.Variables.*;
+
 public class Login {
     private void acessarTelaInicial() {
         DriverFactory.getDriver().get(Propriedades.linkPagina);
@@ -13,14 +15,14 @@ public class Login {
     public void logar() {
         acessarTelaInicial();
         new Steps()
-                .escrever(By.xpath(Variables.campoLogin), Variables.login)
-                .escrever(By.xpath(Variables.campoSenha), Variables.senha)
-                .clicarBotao(By.xpath(Variables.btnEnviar));
+                .escrever(campoLogin, login)
+                .escrever(campoSenha, senha)
+                .clicarBotao(btnEnviar);
     }
 
     public void logout() {
         new Steps()
-                .clicarBotaoMenu(Variables.linkDropdown)
-                .clicarBotaoMenu(Variables.linkSair);
+                .clicarBotaoMenu(linkDropdown)
+                .clicarBotaoMenu(linkSair);
     }
 }
