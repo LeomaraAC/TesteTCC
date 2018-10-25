@@ -12,6 +12,7 @@ public class UsuarioObject {
     public static String prontuarioEditar = "cv1112000";
     public static String nomeEditadar = "User Editar Alterado";
     public static String emailEditadar = "editar.alterado@ifsp.com";
+    public static String prontuarioAuxiliar = "cv1112200";
 
     //IDs e Xpath
     public static String idProntuario = "//input[contains(@id, 'prontuario')]";
@@ -22,12 +23,22 @@ public class UsuarioObject {
     public static String xpathMultiselect = "//div[@class='multiselect__select']";
     public static String xpathCombo = "//*[@class='multiselect__content']//li[*='Master']";
 
-    //Mensagens sucesso
+    //Xpath dos erros de validação dos campos
+    public static String xpathErroCampoNome = "//input[@id='nome']/../../div[@class = 'erro']";
+    public static String xpathErroCampoProntuario = "//input[@id='prontuario']/../../div[@class = 'erro']";
+    public static String xpathErroCampoEmail = "//input[@id='email']/../../div[@class = 'erro']";
+    public static String xpathErroCampoGrupo = "//div[@class='multiselect']/..//label[1]";
+
+    //Mensagens
     public static String msgSucessoIncluir = "Usuário criado com sucesso!";
     public static String msgSucessoExcluir = "Usuário excluído com sucesso!";
     public static String msgSucessoEditar = "Usuário editado com sucesso!";
     public static String msgEmailRepetido = "O campo email já está sendo utilizado.";
     public static String msgProntuarioRepetido = "O campo prontuario já está sendo utilizado.";
+    public static String msgProntuarioVazio = "O campo prontuario é obrigatório.";
+    public static String msgNomeVazio = "O campo nome é obrigatório.";
+    public static String msgEmailVazio = "O campo email é obrigatório.";
+    public static String msgGrupoVazio = "O campo grupo é obrigatório.";
 
     //Tabela
     public static String colunaBusca = "Prontuário";
