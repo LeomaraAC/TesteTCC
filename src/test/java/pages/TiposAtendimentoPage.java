@@ -6,7 +6,6 @@ import core.Steps;
 import org.junit.ComparisonFailure;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.openqa.selenium.By;
 
 import static objects.TiposAtendimentoObject.*;
 import static until.Variables.*;
@@ -34,10 +33,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -53,10 +52,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
     }
 
@@ -70,10 +69,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
     }
 
@@ -88,10 +87,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
     }
 
@@ -106,10 +105,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
     }
 
@@ -123,10 +122,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -142,10 +141,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -157,17 +156,17 @@ public class TiposAtendimentoPage extends Base {
             new Steps()
                     .filtrar(xpathBusca,descricaoEditar,idBtnFiltrar)
                     .clicarCelula(idColunaEditar,colunaBusca,descricaoEditar,xpathTabela,xpathByClickEditar)
-                    .limpar(By.id(idDescricao))
+                    .limpar(idDescricao)
                     .escrever(idDescricao, descricaoEditarAlterado)
                     .clicarBotao(idBtnSalvar)
                     .assertMSG(xpathMensagemSucesso, msgSucessoEditar);
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -185,10 +184,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -200,17 +199,17 @@ public class TiposAtendimentoPage extends Base {
             new Steps()
                     .filtrar(xpathBusca,descricaoExistente,idBtnFiltrar)
                     .clicarCelula(idColunaEditar,colunaBusca,descricaoExistente,xpathTabela,xpathByClickEditar)
-                    .limpar(By.id(idDescricao))
+                    .limpar(idDescricao)
                     .escrever(idDescricao, descricaoExistenteRepetido)
                     .clicarBotao(idBtnSalvar)
                     .assertMSG(xpathMensagemErro, msgErroTipoRepetido);
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -222,17 +221,17 @@ public class TiposAtendimentoPage extends Base {
             new Steps()
                     .filtrar(xpathBusca,descricaoExistente,idBtnFiltrar)
                     .clicarCelula(idColunaEditar,colunaBusca,descricaoExistente,xpathTabela,xpathByClickEditar)
-                    .limpar(By.id(idDescricao))
+                    .limpar(idDescricao)
                     .escrever(idDescricao, descricaoCaracteresEspeciais)
                     .clicarBotao(idBtnSalvar)
                     .assertMSG(xpathErroCampoDescricao, msgErroTipoCaracteresEspeciais);
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -244,17 +243,17 @@ public class TiposAtendimentoPage extends Base {
             new Steps()
                     .filtrar(xpathBusca,descricaoExistente,idBtnFiltrar)
                     .clicarCelula(idColunaEditar,colunaBusca,descricaoExistente,xpathTabela,xpathByClickEditar)
-                    .limpar(By.id(idDescricao))
+                    .limpar(idDescricao)
                     .escrever(idDescricao, descricaoNumeros)
                     .clicarBotao(idBtnSalvar)
                     .assertMSG(xpathErroCampoDescricao, msgErroTipoNumero);
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -266,17 +265,17 @@ public class TiposAtendimentoPage extends Base {
             new Steps()
                     .filtrar(xpathBusca,descricaoExistente,idBtnFiltrar)
                     .clicarCelula(idColunaEditar,colunaBusca,descricaoExistente,xpathTabela,xpathByClickEditar)
-                    .limpar(By.id(idDescricao))
+                    .limpar(idDescricao)
                     .escrever(idDescricao, descricaoMinimo)
                     .clicarBotao(idBtnSalvar)
                     .assertMSG(xpathErroCampoDescricao, msgErroTipoMinimo);
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
 
     }
@@ -292,10 +291,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         }catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
     }
 
@@ -310,10 +309,10 @@ public class TiposAtendimentoPage extends Base {
             status = "OK";
         } catch (ComparisonFailure ex) {
             status = "NOK";
-            error = ex.getMessage();
+            getLog(ex);
         } catch (Exception ex) {
             status = "FAIL";
-            error = ex.getMessage();
+            getLog(ex);
         }
     }
 }
