@@ -14,6 +14,7 @@ public class Variables {
     /***Menu***/
     public static String menuAdministracao = "//a[contains(text(), 'Administração')]";
     public static String menuUsuario = "//a[contains(text(), 'Usuários')]";
+    public static String menuGrupo = "//a[contains(text(),'Grupos')]";
     public static String menuAluno = "//a[contains(text(),'Aluno')]";
     public static String menuAtendimento = "//a[contains(text(),'Atendimento')]";
     public static String menuTipos = "//a[contains(text(),'Tipos')]";
