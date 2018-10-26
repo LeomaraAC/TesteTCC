@@ -65,12 +65,11 @@ public class Steps {
         element.sendKeys(Keys.TAB);
         return this;
     }
-    /*** BOTÃO MENU ***/
+
     public Steps clicarBotaoMenu(String xpath){
         return clicarBotao(xpath);
     }
 
-    /*** CAMBO BOX ***/
     public Steps clicarCombo(String xpath, String xpathSubmenu) {
         return clicarBotao(xpath)
                 .clicarBotao(xpathSubmenu);
