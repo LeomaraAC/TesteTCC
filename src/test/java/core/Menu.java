@@ -18,6 +18,19 @@ public class Menu extends Base {
                 .clicarBotaoMenu(btnNovo);
     }
 
+    /***Tela de Grupo***/
+    public void acessarTelaGrupo() {
+        new Steps()
+                .clicarBotaoMenu(menuAdministracao)
+                .clicarBotaoMenu(menuGrupo);
+    }
+
+    public void acessarTelaInserirGrupo(){
+        acessarTelaGrupo();
+        new Steps()
+                .clicarBotaoMenu(btnNovo);
+    }
+
     /***Tela de Aluno***/
     public void acessarTelaAluno() {
         new Steps()
