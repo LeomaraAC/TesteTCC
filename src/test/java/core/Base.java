@@ -22,7 +22,13 @@ public class Base {
     }
 
     @After
+    public void finaliza() {
 
+        if (status.equals("OK")) {
+            loginPage.logout();
+            if (FecharBrowser)
+                killDriver();
         }
     }
+
 }
