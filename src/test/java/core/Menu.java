@@ -2,39 +2,41 @@ package core;
 
 import until.Variables;
 
+import static until.Variables.*;
+
 public class Menu extends Base {
     /***Tela de Usuário***/
     public void acessarTelaUsuario() {
         new Steps()
-                .clicarBotaoMenu(Variables.menuAdministracao)
-                .clicarBotaoMenu(Variables.menuUsuario);
+                .clicarBotaoMenu(menuAdministracao)
+                .clicarBotaoMenu(menuUsuario);
     }
 
     public void acessarTelaInserirUsuario(){
         acessarTelaUsuario();
         new Steps()
-                .clicarBotaoMenu(Variables.btnNovo);
+                .clicarBotaoMenu(btnNovo);
     }
 
     /***Tela de Aluno***/
     public void acessarTelaAluno() {
         new Steps()
-                .clicarBotaoMenu(Variables.menuAluno);
+                .clicarBotaoMenu(menuAluno);
     }
 
     /***Tela de Atendimento***/
     public void acessarTelaAtendimento() {
         new Steps()
-                .clicarBotaoMenu(Variables.menuAtendimento);
+                .clicarBotaoMenu(menuAtendimento);
 
         new Steps()
-                .clicarBotaoMenu(Variables.menuTipos);
+                .clicarBotaoMenu(menuTipos);
 
     }
 
     public void acessarTelaInserirTipo() {
         acessarTelaAtendimento();
         new Steps()
-                .clicarBotaoMenu(Variables.btnNovoTipo);
+                .clicarBotaoMenu(btnNovoTipo);
     }
 }
