@@ -3,7 +3,6 @@ package pages;
 import core.Base;
 import core.Menu;
 import core.Steps;
-import org.junit.ComparisonFailure;
 import org.junit.Test;
 
 import static objects.UsuarioObject.*;
@@ -62,8 +61,8 @@ public class UsuarioPage extends Base {
     public void testEditarUsuarioNomeEmail() throws InterruptedException {
         menu.acessarTelaUsuario();
         new Steps()
-                .filtrar(xpathBusca,prontuarioEditar,idBtnFiltrar)
-                .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar)
+                .filtrar(xpathBusca,prontuarioEditar)
+                .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar, xpathPagination)
                 .substituirValor(idNome, nomeEditadar)
                 .substituirValor(idEmail, emailEditadar)
                 .clicarBotao(idBtnSalvar)
@@ -74,8 +73,8 @@ public class UsuarioPage extends Base {
     public void testEditarUsuarioSemGrupo() throws InterruptedException {
         menu.acessarTelaUsuario();
         new Steps()
-                .filtrar(xpathBusca,prontuarioAuxiliar,idBtnFiltrar)
-                .clicarCelula(idColunaEditar,colunaBusca,prontuarioAuxiliar,xpathTabela,xpathByClickEditar)
+                .filtrar(xpathBusca,prontuarioAuxiliar)
+                .clicarCelula(idColunaEditar,colunaBusca,prontuarioAuxiliar,xpathTabela,xpathByClickEditar, xpathPagination)
                 .clicarCombo(xpathMultiselect, xpathCombo)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathErroCampoGrupo, msgGrupoVazio);
@@ -86,8 +85,8 @@ public class UsuarioPage extends Base {
     public void testEditarUsuarioVazio() throws InterruptedException {
         menu.acessarTelaUsuario();
         new Steps()
-                .filtrar(xpathBusca,prontuarioAuxiliar,idBtnFiltrar)
-                .clicarCelula(idColunaEditar,colunaBusca,prontuarioAuxiliar,xpathTabela,xpathByClickEditar)
+                .filtrar(xpathBusca,prontuarioAuxiliar)
+                .clicarCelula(idColunaEditar,colunaBusca,prontuarioAuxiliar,xpathTabela,xpathByClickEditar, xpathPagination)
                 .clicarBotao(idBtnLimpar)
                 .removerFocus(idProntuario)
                 .clicarBotao(idBtnSalvar)
@@ -102,8 +101,8 @@ public class UsuarioPage extends Base {
     public void testEditarUsuarioSemProntuario() throws InterruptedException {
         menu.acessarTelaUsuario();
         new Steps()
-                .filtrar(xpathBusca,prontuarioEditar,idBtnFiltrar)
-                .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar)
+                .filtrar(xpathBusca,prontuarioEditar)
+                .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar, xpathPagination)
                 .substituirValor(idProntuario, "")
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathErroCampoProntuario, msgProntuarioVazio);
@@ -114,8 +113,8 @@ public class UsuarioPage extends Base {
     public void testEditarUsuarioProntuarioRepetido() throws InterruptedException {
         menu.acessarTelaUsuario();
         new Steps()
-                .filtrar(xpathBusca,prontuarioEditar,idBtnFiltrar)
-                .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar)
+                .filtrar(xpathBusca,prontuarioEditar)
+                .clicarCelula(idColunaEditar,colunaBusca,prontuarioEditar,xpathTabela,xpathByClickEditar, xpathPagination)
                 .substituirValor(idProntuario, prontuarioRepetido)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemErro, msgProntuarioRepetido);
@@ -126,8 +125,8 @@ public class UsuarioPage extends Base {
     public void testExcluirUsuario() throws InterruptedException {
         menu.acessarTelaUsuario();
         new Steps()
-                .filtrar(xpathBusca,prontuarioExcluir, idBtnFiltrar)
-                .clicarCelula(idColunaExcluir,colunaBusca,prontuarioExcluir,xpathTabela,xpathByClickExcluir)
+                .filtrar(xpathBusca,prontuarioExcluir)
+                .clicarCelula(idColunaExcluir,colunaBusca,prontuarioExcluir,xpathTabela,xpathByClickExcluir, xpathPagination)
                 .assertMSG(xpathMensagemSucesso,msgSucessoExcluir);
         status = "OK";
     }
