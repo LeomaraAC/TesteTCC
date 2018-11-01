@@ -38,8 +38,8 @@ public class Variables {
     public static String xpathTabela = "//*[contains(@id, 'tabelaListagem')]//table";
     public static int idColunaExcluir = 1;
     public static int idColunaEditar = 2;
-    public static String xpathByClickExcluir = ".//i";
-    public static String xpathByClickEditar = ".//a";
+    public static String xpathByClickExcluir = "//i";
+    public static String xpathByClickEditar = "//a";
     public static String xpathMsgTabelaSemElemento = "//*[contains(@id, 'tabelaListagem')]//table//tbody//div[contains(@class, 'v-alert red')]/div";
     public static String msgTabelaSemElemento = "Nenhum dado encontrado :(";
 }
