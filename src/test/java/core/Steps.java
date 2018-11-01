@@ -144,6 +144,42 @@ public class Steps {
         return this;
     }
 
+    public Steps verificarElementoTabela(String colunaBusca, String valor, String xpathTabela, String xpathPagination, boolean presente) throws InterruptedException {
+        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathTabela)));
+        WebElement tabela = getDriver().findElement(By.xpath(xpathTabela));
+        List<WebElement> pagination = getDriver().findElements(By.xpath(xpathPagination));
+
+        int idColuna = obterIndiceColuna(colunaBusca, tabela);
+        int idLinha = -1;
+
+        if (idColuna > -1) {
+            if (pagination.size() > 0) {
+                for (int page = 0; page < pagination.size(); page++) {
+                    if (idLinha == -1) {
+                        getWait().until(ExpectedConditions.elementToBeClickable(pagination.get(page)));
+                        pagination.get(page).click();
+                    } else
+                        break;
+                    idLinha = obterIndiceLinha(valor, tabela, idColuna);
+                }
+            } else {
+                idLinha = obterIndiceLinha(valor, tabela, idColuna);
+            }
+        }
+
+        String xpath = xpathTabela + "//tr[" + idLinha + "]/td[" + idColuna + "]";
+        boolean find = getDriver().findElements(By.xpath(xpath)).size() <= 0;
+        if (presente)
+            Assert.assertFalse("Expected to find the " + valor + " element, but it was not found.", find);
+        else
+            Assert.assertFalse("Expected to not find the " + valor + " element, but it was found.", !find);
+        return this;
+    }
+
+    public Steps verificarElementoTabela(String colunaBusca, String valor, String xpathTabela, String xpathPagination) throws InterruptedException {
+        return verificarElementoTabela(colunaBusca, valor, xpathTabela, xpathPagination, true);
+    }
+
     /*** Filtrar ***/
     public Steps filtrar(String xpathCampo, String valor) {
         return escrever(xpathCampo, valor)
