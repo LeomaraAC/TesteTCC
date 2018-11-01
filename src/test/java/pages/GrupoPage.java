@@ -52,6 +52,28 @@ public class GrupoPage extends Base {
         status = "OK";
     }
 
+    @Test
+    public void testDesmarcarForaModalPermissaoSelecionada() throws InterruptedException {
+        menu.acessarTelaInserirGrupo();
+        Steps steps = new Steps()
+                .removerFocus(idNome)
+                .clicarBotao(idBtnAdicionar)
+                .esperar(500);
+        for (String permissao : permissoesInserir) {
+            steps.clicarCelula(idColunaMarcarDesmarcar, colunaBuscaPermissoes, permissao, xpathTabela, xpathCheckBox, xpathPagination);
+        }
+        steps
+                .clicarBotao(idBtnFecharModal)
+                .clicarCelula(idColunaMarcarDesmarcar, colunaBuscaPermissoes, permissoesInserir[indiceDesmarcar], xpathTabela, xpathByClickExcluir, xpathPagination);
+        for (String permissao : permissoesInserir) {
+            if (!permissao.equals(permissoesInserir[indiceDesmarcar]))
+                steps.verificarElementoTabela(colunaBuscaPermissoes, permissao, xpathTabela, xpathPagination);
+            else
+                steps.verificarElementoTabela(colunaBuscaPermissoes, permissao, xpathTabela, xpathPagination, false);
+        }
+        status = "OK";
+    }
+
     public void testInserirGrupo() throws InterruptedException {
         menu.acessarTelaInserirGrupo();
         new Steps()
