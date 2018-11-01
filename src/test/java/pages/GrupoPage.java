@@ -190,4 +190,17 @@ public class GrupoPage extends Base {
                 .assertMSG(xpathErroCampoNome, msgNomeInvalido);
         status = "OK";
     }
+
+    @Test
+    public void testEditarGrupoSemAlterarPermissoes() throws InterruptedException {
+        menu.acessarTelaGrupo();
+        new Steps()
+                .clicarCelula(idColunaEditar, colunaBuscaGrupo, grupoEditarSemAlterarPermissoes, xpathTabela, xpathByClickEditar, xpathPagination)
+                .limpar(idNome)
+                .escrever(idNome, nomeEditarSemAlterarPermissoes)
+                .clicarBotao(idBtnSalvar)
+                .assertMSG(xpathMensagemSucesso, msgSucessoEditar);
+        status = "OK";
+    }
+
 }
