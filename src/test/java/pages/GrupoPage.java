@@ -7,13 +7,28 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static objects.GrupoObject.*;
-import static until.Variables.idBtnSalvar;
-import static until.Variables.xpathMensagemErro;
+import static until.Variables.*;
 
 public class GrupoPage extends Base {
     private Menu menu = new Menu();
 
-    @Ignore
+    @Test
+    public void testSelecionarPermissoes() throws InterruptedException {
+        menu.acessarTelaInserirGrupo();
+        Steps steps = new Steps()
+                .removerFocus(idNome)
+                .clicarBotao(idBtnAdicionar)
+                .esperar(500);
+        for (String permissao : permissoesInserir) {
+            steps.clicarCelula(idColunaMarcarDesmarcar, colunaBuscaPermissoes, permissao, xpathTabela, xpathCheckBox, xpathPagination);
+        }
+        steps
+                .clicarBotao(idBtnFecharModal);
+        for (String permissao : permissoesInserir) {
+            steps.verificarElementoTabela(colunaBuscaPermissoes, permissao, xpathTabela, xpathPagination);
+        }
+        status = "OK";
+    }
     public void testInserirGrupo() throws InterruptedException {
         menu.acessarTelaInserirGrupo();
         new Steps()
