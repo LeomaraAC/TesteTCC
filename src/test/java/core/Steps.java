@@ -79,17 +79,33 @@ public class Steps {
     }
 
     /*** TABELA ***/
-    public Steps clicarCelula(int idColunaBotao, String colunaBusca, String valor, String xpathTabela, String xpathByClick) throws InterruptedException {
+    public Steps clicarCelula(int idColunaBotao, String colunaBusca, String valor, String xpathTabela, String xpathByClick, String xpathPagination) throws InterruptedException {
         getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathTabela)));
         WebElement tabela = getDriver().findElement(By.xpath(xpathTabela));
-
+        List<WebElement> pagination = getDriver().findElements(By.xpath(xpathPagination));
         esperar(200);
+
         int idColuna = obterIndiceColuna(colunaBusca, tabela);
+        int idLinha = -1;
+        /*** Se o id da coluna retornar -1 não precisa buscar a linha, visto que a coluna não existe. ***/
+        if (idColuna > -1) {
+            if (pagination.size() > 0) {
+                for (int page = 0; page < pagination.size(); page++) {
+                    if (idLinha == -1) {
+                        getWait().until(ExpectedConditions.elementToBeClickable(pagination.get(page)));
+                        pagination.get(page).click();
+                        esperar(1000);
+                    } else
+                        break;
+                    idLinha = obterIndiceLinha(valor, tabela, idColuna);
+                }
+            } else {
+                idLinha = obterIndiceLinha(valor, tabela, idColuna);
+            }
+        }
 
-        int idLinha = obterIndiceLinha(valor,tabela,idColuna);
-
-        WebElement celula = tabela.findElement(By.xpath(".//tr["+idLinha+"]/td["+idColunaBotao+"]"));
-        celula.findElement(By.xpath(xpathByClick)).click();
+        String xpath = xpathTabela + "//tr[" + idLinha + "]/td[" + idColunaBotao + "]" + xpathByClick;
+        clicarBotao(xpath);
         return this;
     }
 
