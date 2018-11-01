@@ -131,4 +131,16 @@ public class GrupoPage extends Base {
         status = "OK";
 
     }
+
+    @Test
+    public void testIncerirMinimoCaracterNome() {
+        menu.acessarTelaInserirGrupo();
+        Steps step = new Steps()
+                .escrever(idNome, nomeMinimo)
+                .removerFocus(idNome)
+                .clicarBotao(idBtnSalvar)
+                .assertMSG(xpathErroCampoNome, msgNomeMinimo);
+        status = "OK";
+    }
+
 }
