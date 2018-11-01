@@ -145,9 +145,9 @@ public class Steps {
     }
 
     /*** Filtrar ***/
-    public Steps filtrar(String xpathCampo, String valor, String xpathBtnFiltro) {
-        return escrever(xpathCampo,valor)
-                .clicarBotao(xpathBtnFiltro);
+    public Steps filtrar(String xpathCampo, String valor) {
+        return escrever(xpathCampo, valor)
+                .removerFocus(xpathCampo);
     }
 
     public Steps esperar(int tempo) throws InterruptedException {
