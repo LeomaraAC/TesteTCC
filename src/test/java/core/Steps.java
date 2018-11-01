@@ -1,15 +1,17 @@
 package core;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static until.DriverFactory.getDriver;
 import static until.Wait.getWait;
-
-import java.util.List;
 
 public class Steps {
 
@@ -34,6 +36,7 @@ public class Steps {
         elementText.sendKeys(texto);
         return this;
     }
+
     public Steps substituirValor(String xpath, String texto) {
         WebElement element = getDriver().findElement(By.xpath(xpath));
         getWait().until(ExpectedConditions.elementToBeClickable(element));
@@ -66,7 +69,7 @@ public class Steps {
         return this;
     }
 
-    public Steps clicarBotaoMenu(String xpath){
+    public Steps clicarBotaoMenu(String xpath) {
         return clicarBotao(xpath);
     }
 
