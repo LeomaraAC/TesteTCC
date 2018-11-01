@@ -143,4 +143,23 @@ public class GrupoPage extends Base {
         status = "OK";
     }
 
+
+    @Test
+    public void testInserirGrupoNumeros() throws InterruptedException {
+        menu.acessarTelaInserirGrupo();
+        Steps steps = new Steps()
+                .escrever(idNome, nomeComNumero)
+                .removerFocus(idNome)
+                .clicarBotao(idBtnAdicionar)
+                .esperar(500);
+        for (String permissao : poucasPermissoes) {
+            steps.clicarCelula(idColunaMarcarDesmarcar, colunaBuscaPermissoes, permissao, xpathTabela, xpathCheckBox, xpathPagination);
+        }
+        steps
+                .clicarBotao(idBtnFecharModal)
+                .clicarBotao(idBtnSalvar)
+                .assertMSG(xpathMensagemSucesso, msgSucessoIncluir);
+        status = "OK";
+    }
+
 }
