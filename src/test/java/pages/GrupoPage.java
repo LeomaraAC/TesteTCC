@@ -112,4 +112,23 @@ public class GrupoPage extends Base {
         status = "OK";
     }
 
+    @Test
+    public void testInserirRepetido() throws InterruptedException {
+        menu.acessarTelaInserirGrupo();
+        Steps step = new Steps()
+                .escrever(idNome, nomeRepetido)
+                .removerFocus(idNome)
+                .clicarBotao(idBtnAdicionar)
+                .esperar(500);
+        for (String permissao : permissoesInserir) {
+            step
+                    .clicarCelula(idColunaMarcarDesmarcar, colunaBuscaPermissoes, permissao, xpathTabela, xpathCheckBox, xpathPagination);
+        }
+        step
+                .clicarBotao(idBtnFecharModal)
+                .clicarBotao(idBtnSalvar)
+                .assertMSG(xpathMensagemErro, msgGrupoRepetido);
+        status = "OK";
+
+    }
 }
