@@ -24,10 +24,11 @@ public class Base {
     @After
     public void finaliza() {
 
-        if (status.equals("OK")) {
-            loginPage.logout();
+        if (status.equalsIgnoreCase("OK")) {
             if (FecharBrowser)
                 killDriver();
+            else
+                loginPage.logout();
         }
     }
 

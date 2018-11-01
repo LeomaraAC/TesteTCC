@@ -73,9 +73,10 @@ public class SimpleOnFailed extends TestWatcher {
     protected void finished(Description description) {
         Login loginPage = new Login();
         if (fail) {
-            loginPage.logout();
             if (FecharBrowser)
                 killDriver();
+            else
+                loginPage.logout();
         }
     }
 }
