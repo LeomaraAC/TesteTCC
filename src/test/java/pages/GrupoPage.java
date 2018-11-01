@@ -203,4 +203,25 @@ public class GrupoPage extends Base {
         status = "OK";
     }
 
+    @Test
+    public void testEditarGrupo() throws InterruptedException {
+        menu.acessarTelaGrupo();
+        Steps steps = new Steps()
+                .clicarCelula(idColunaEditar, colunaBuscaGrupo, grupoEditar, xpathTabela, xpathByClickEditar, xpathPagination)
+                .clicarBotao(idBtnLimpar)
+                .escrever(idNome, nomeEditar)
+                .clicarBotao(idBtnAdicionar);
+        for (String permissao : permissoesEditar) {
+            steps.clicarCelula(idColunaMarcarDesmarcar, colunaBuscaPermissoes, permissao, xpathTabela, xpathCheckBox, xpathPagination);
+        }
+        steps
+                .clicarBotao(idBtnFecharModal);
+        for (String permissao : permissoesEditar) {
+            steps.verificarElementoTabela(colunaBuscaPermissoes, permissao, xpathTabela, xpathPagination);
+        }
+                steps
+                        .clicarBotao(idBtnSalvar)
+                        .assertMSG(xpathMensagemSucesso, msgSucessoEditar);
+        status = "OK";
+    }
 }
