@@ -74,14 +74,22 @@ public class GrupoPage extends Base {
         status = "OK";
     }
 
+    @Test
     public void testInserirGrupo() throws InterruptedException {
         menu.acessarTelaInserirGrupo();
-        new Steps()
+        Steps steps = new Steps()
                 .escrever(idNome, nome)
+                .removerFocus(idNome)
                 .clicarBotao(idBtnAdicionar)
-                .esperar(500)
-                .escrever(idBuscaPermissoes, permissaoApagarUsuario)
-                .clicarBotao(idBtnFecharModal);
+                .esperar(500);
+        for (String permissao : permissoesInserir) {
+            steps.clicarCelula(idColunaMarcarDesmarcar, colunaBuscaPermissoes, permissao, xpathTabela, xpathCheckBox, xpathPagination);
+        }
+        steps
+                .clicarBotao(idBtnFecharModal)
+                .clicarBotao(idBtnSalvar)
+                .assertMSG(xpathMensagemSucesso, msgSucessoIncluir);
+        status = "OK";
     }
 
     @Test
