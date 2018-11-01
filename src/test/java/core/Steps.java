@@ -122,7 +122,7 @@ public class Steps {
     }
 
     private int obterIndiceLinha(String valor, WebElement tabela, int idColuna) {
-        List<WebElement> linhas = tabela.findElements(By.xpath("./tbody/tr/td["+idColuna+"]"));
+        List<WebElement> linhas = tabela.findElements(By.xpath("./tbody/tr/td[" + idColuna + "]"));
         int idLinhas = -1;
         for (int i = 0; i < linhas.size(); i++) {
             if (linhas.get(i).getText().equalsIgnoreCase(valor)) {
