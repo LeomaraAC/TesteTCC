@@ -113,8 +113,8 @@ public class Steps {
         List<WebElement> colunas = tabela.findElements(By.xpath(".//th"));
         int idColuna = -1;
         for (int i = 0; i < colunas.size(); i++) {
-            if (colunas.get(i).getText().equals(coluna)){
-                idColuna = i+1;
+            if (colunas.get(i).getText().equalsIgnoreCase(coluna)) {
+                idColuna = i + 1;
                 break;
             }
         }
@@ -125,7 +125,7 @@ public class Steps {
         List<WebElement> linhas = tabela.findElements(By.xpath("./tbody/tr/td["+idColuna+"]"));
         int idLinhas = -1;
         for (int i = 0; i < linhas.size(); i++) {
-            if (linhas.get(i).getText().equals(valor)) {
+            if (linhas.get(i).getText().equalsIgnoreCase(valor)) {
                 idLinhas = i + 1;
                 break;
             }
