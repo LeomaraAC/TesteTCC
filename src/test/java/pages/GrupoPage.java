@@ -101,4 +101,15 @@ public class GrupoPage extends Base {
                 .assertMSG(xpathMensagemErro, msgSemPermissoes);
         status = "OK";
     }
+
+    @Test
+    public void testInserirGrupoSemNome() {
+        menu.acessarTelaInserirGrupo();
+        new Steps()
+                .removerFocus(idNome)
+                .clicarBotao(idBtnSalvar)
+                .assertMSG(xpathErroCampoNome, msgCampoObrigatorio);
+        status = "OK";
+    }
+
 }
