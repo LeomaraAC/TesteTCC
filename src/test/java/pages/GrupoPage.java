@@ -180,4 +180,14 @@ public class GrupoPage extends Base {
         status = "OK";
     }
 
+    @Test
+    public void testInserirGrupoCaracterEspecial() throws InterruptedException {
+        menu.acessarTelaInserirGrupo();
+        new Steps()
+                .escrever(idNome, nomeComCaracteresEspeciais)
+                .removerFocus(idNome)
+                .clicarBotao(idBtnSalvar)
+                .assertMSG(xpathErroCampoNome, msgNomeInvalido);
+        status = "OK";
+    }
 }
