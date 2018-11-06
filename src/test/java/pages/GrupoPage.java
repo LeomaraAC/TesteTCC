@@ -219,9 +219,20 @@ public class GrupoPage extends Base {
         for (String permissao : permissoesEditar) {
             steps.verificarElementoTabela(colunaBuscaPermissoes, permissao, xpathTabela, xpathPagination);
         }
-                steps
-                        .clicarBotao(idBtnSalvar)
-                        .assertMSG(xpathMensagemSucesso, msgSucessoEditar);
+        steps
+                .clicarBotao(idBtnSalvar)
+                .assertMSG(xpathMensagemSucesso, msgSucessoEditar);
         status = "OK";
     }
+
+    @Test
+    public void testExcluirTipo() throws InterruptedException {
+        menu.acessarTelaGrupo();
+        new Steps()
+                .clicarCelula(idColunaExcluir, colunaBuscaGrupo, grupoExcluir, xpathTabela, xpathByClickExcluir, xpathPagination)
+                .clicarBotao(btnConfirmar)
+                .assertMSG(xpathMensagemSucesso, msgSucessoExcluir);
+        status = "OK";
+    }
+
 }
