@@ -12,8 +12,10 @@ public class GrupoObject {
     public static String nomeEditar = "Grupo Editar Alterado";
     public static String nomeEditarSemAlterarPermissoes = "Grupo Editar Sem alterar Alterado";
 
-    public static  String grupoEditar = "Grupo Editar";
-    public static  String grupoEditarSemAlterarPermissoes = "Grupo editar sem Alterar Permissões";
+    public static String grupoEditar = "Grupo Editar";
+    public static String grupoEditarSemAlterarPermissoes = "Grupo editar sem Alterar Permissões";
+    public static String grupoExcluir = "Grupo Excluir";
+
     public static String[] permissoesInserir = {
             "Apagar usuário",
             "Importar dados dos alunos",
@@ -52,6 +54,7 @@ public class GrupoObject {
     // Messagens
     public static String msgSucessoIncluir = "Grupo criado com sucesso!";
     public static String msgSucessoEditar = "Grupo editado com sucesso!";
+    public static String msgSucessoExcluir = "Grupo excluído com sucesso!";
     public static String msgSemPermissoes = "Selecione pelo menos uma permissão para poder continuar";
     public static String msgCampoObrigatorio = "O campo grupo é obrigatório.";
     public static String msgGrupoRepetido = "O campo grupo já está sendo utilizado.";
