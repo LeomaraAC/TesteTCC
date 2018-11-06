@@ -9,6 +9,7 @@ public class Variables {
     public static String btnEnviar = "//button[contains(@type, 'submit')]";
     public static String linkDropdown = "//li[contains(@class,'nav-item dropdown')]/a";
     public static String linkSair = "//form[contains(@id, 'logout-form')]/a";
+    public static String btnConfirmar = "//button[contains(@class, 'swal2-confirm')]";
 
     /***Menu***/
     public static String menuAdministracao = "//a[contains(text(), 'Administração')]";

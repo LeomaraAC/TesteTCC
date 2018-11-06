@@ -127,6 +127,7 @@ public class UsuarioPage extends Base {
         new Steps()
                 .filtrar(xpathBusca,prontuarioExcluir)
                 .clicarCelula(idColunaExcluir,colunaBusca,prontuarioExcluir,xpathTabela,xpathByClickExcluir, xpathPagination)
+                .clicarBotao(btnConfirmar)
                 .assertMSG(xpathMensagemSucesso,msgSucessoExcluir);
         status = "OK";
     }

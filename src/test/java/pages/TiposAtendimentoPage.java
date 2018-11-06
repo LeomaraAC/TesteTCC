@@ -164,6 +164,7 @@ public class TiposAtendimentoPage extends Base {
         new Steps()
                 .filtrar(xpathBusca, descricaoExcluir)
                 .clicarCelula(idColunaExcluir, colunaBusca, descricaoExcluir, xpathTabela, xpathByClickExcluir, xpathPagination)
+                .clicarBotao(btnConfirmar)
                 .assertMSG(xpathMensagemSucesso, msgSucessoExcluir);
         status = "OK";
     }
