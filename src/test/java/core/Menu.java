@@ -1,7 +1,5 @@
 package core;
 
-import until.Variables;
-
 import static until.Variables.*;
 
 public class Menu extends Base {
@@ -12,7 +10,7 @@ public class Menu extends Base {
                 .clicarBotaoMenu(menuUsuario);
     }
 
-    public void acessarTelaInserirUsuario(){
+    public void acessarTelaInserirUsuario() {
         acessarTelaUsuario();
         new Steps()
                 .clicarBotaoMenu(btnNovo);
@@ -25,7 +23,7 @@ public class Menu extends Base {
                 .clicarBotaoMenu(menuGrupo);
     }
 
-    public void acessarTelaInserirGrupo(){
+    public void acessarTelaInserirGrupo() {
         acessarTelaGrupo();
         new Steps()
                 .clicarBotaoMenu(btnNovo);
