@@ -2,8 +2,8 @@ package until;
 
 public class Variables {
     /***Login***/
-    public static  String login = "cv1002000";
-    public static  String senha = "secret";
+    public static String login = "cv1002000";
+    public static String senha = "secret";
     public static String campoLogin = "//input[contains(@name, 'prontuario')]";
     public static String campoSenha = "//input[contains(@name, 'password')]";
     public static String btnEnviar = "//button[contains(@type, 'submit')]";
