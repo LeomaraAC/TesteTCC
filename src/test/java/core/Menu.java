@@ -35,19 +35,30 @@ public class Menu extends Base {
                 .clicarBotaoMenu(menuAluno);
     }
 
-    /***Tela de Atendimento***/
-    public void acessarTelaAtendimento() {
+    /***Tela do Tipo de Atendimento ***/
+    public void acessarTelaTipoAtendimento() {
         new Steps()
-                .clicarBotaoMenu(menuAtendimento);
-
-        new Steps()
+                .clicarBotaoMenu(menuAtendimento)
                 .clicarBotaoMenu(menuTipos);
 
     }
 
     public void acessarTelaInserirTipo() {
-        acessarTelaAtendimento();
+        acessarTelaTipoAtendimento();
         new Steps()
                 .clicarBotaoMenu(btnNovoTipo);
+    }
+
+    /*** Tela de Agendamento ***/
+    public void acessarTelaAgendamento() {
+        new Steps()
+                .clicarBotaoMenu(menuAtendimento)
+                .clicarBotaoMenu(menuAgendamento);
+    }
+
+    public void acessarTelaInserirAgendamento() {
+        acessarTelaAgendamento();
+        new Steps()
+                .clicarBotaoMenu(btnNovoAgendamento);
     }
 }
