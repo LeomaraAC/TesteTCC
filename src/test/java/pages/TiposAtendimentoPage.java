@@ -83,7 +83,7 @@ public class TiposAtendimentoPage extends Base {
 
     @Test
     public void testEditarTipo() throws InterruptedException {
-        menu.acessarTelaAtendimento();
+        menu.acessarTelaTipoAtendimento();
         new Steps()
                 .filtrar(xpathBusca, descricaoEditar)
                 .clicarCelula(idColunaEditar, colunaBusca, descricaoEditar, xpathTabela, xpathByClickEditar, xpathPagination)
@@ -96,7 +96,7 @@ public class TiposAtendimentoPage extends Base {
 
     @Test
     public void testEditarTipoVazio() throws InterruptedException {
-        menu.acessarTelaAtendimento();
+        menu.acessarTelaTipoAtendimento();
         new Steps()
                 .filtrar(xpathBusca, descricaoExistente)
                 .clicarCelula(idColunaEditar, colunaBusca, descricaoExistente, xpathTabela, xpathByClickEditar, xpathPagination)
@@ -108,7 +108,7 @@ public class TiposAtendimentoPage extends Base {
 
     @Test
     public void testEditarTipoRepetido() throws InterruptedException {
-        menu.acessarTelaAtendimento();
+        menu.acessarTelaTipoAtendimento();
         new Steps()
                 .filtrar(xpathBusca, descricaoExistente)
                 .clicarCelula(idColunaEditar, colunaBusca, descricaoExistente, xpathTabela, xpathByClickEditar, xpathPagination)
@@ -121,7 +121,7 @@ public class TiposAtendimentoPage extends Base {
 
     @Test
     public void testEditarTipoCaracteresEspeciais() throws InterruptedException {
-        menu.acessarTelaAtendimento();
+        menu.acessarTelaTipoAtendimento();
         new Steps()
                 .filtrar(xpathBusca, descricaoExistente)
                 .clicarCelula(idColunaEditar, colunaBusca, descricaoExistente, xpathTabela, xpathByClickEditar, xpathPagination)
@@ -134,7 +134,7 @@ public class TiposAtendimentoPage extends Base {
 
     @Test
     public void testEditarTipoNumero() throws InterruptedException {
-        menu.acessarTelaAtendimento();
+        menu.acessarTelaTipoAtendimento();
         new Steps()
                 .filtrar(xpathBusca, descricaoExistente)
                 .clicarCelula(idColunaEditar, colunaBusca, descricaoExistente, xpathTabela, xpathByClickEditar, xpathPagination)
@@ -147,7 +147,7 @@ public class TiposAtendimentoPage extends Base {
 
     @Test
     public void testEditarTipoMinimoCaracteres() throws InterruptedException {
-        menu.acessarTelaAtendimento();
+        menu.acessarTelaTipoAtendimento();
         new Steps()
                 .filtrar(xpathBusca, descricaoExistente)
                 .clicarCelula(idColunaEditar, colunaBusca, descricaoExistente, xpathTabela, xpathByClickEditar, xpathPagination)
@@ -160,7 +160,7 @@ public class TiposAtendimentoPage extends Base {
 
     @Test
     public void testExcluirTipo() throws InterruptedException {
-        menu.acessarTelaAtendimento();
+        menu.acessarTelaTipoAtendimento();
         new Steps()
                 .filtrar(xpathBusca, descricaoExcluir)
                 .clicarCelula(idColunaExcluir, colunaBusca, descricaoExcluir, xpathTabela, xpathByClickExcluir, xpathPagination)
@@ -171,7 +171,7 @@ public class TiposAtendimentoPage extends Base {
 
     @Test
     public void testListaTipoInexistente() throws InterruptedException {
-        menu.acessarTelaAtendimento();
+        menu.acessarTelaTipoAtendimento();
         new Steps()
                 .filtrar(xpathBusca, descricaoInexistente)
                 .esperar(600)
