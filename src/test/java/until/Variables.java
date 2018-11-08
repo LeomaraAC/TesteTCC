@@ -18,10 +18,12 @@ public class Variables {
     public static String menuAluno = "//a[contains(text(),'Aluno')]";
     public static String menuAtendimento = "//a[contains(text(),'Atendimento')]";
     public static String menuTipos = "//a[contains(text(),'Tipos')]";
+    public static String menuAgendamento = "//a[contains(text(),'Agendamentos')]";
 
     /***Botões Novos***/
     public static String btnNovo = "//a[contains(@id, 'novo')]";
     public static String btnNovoTipo = "//a[contains(@id, 'novoTipo')]";
+    public static String btnNovoAgendamento = "//a[contains(@id, 'novoAgendamento')]";
 
     /***Xpath***/
     public static String xpathMensagemSucesso = "//div[contains(@class, 'v-snack__wrapper green')]/div[contains(@class, 'v-snack__content')]/span";
