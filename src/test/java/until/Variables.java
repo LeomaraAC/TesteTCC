@@ -32,7 +32,6 @@ public class Variables {
     /***IDs***/
     public static String idBtnSalvar = "//button[contains(@id, 'salvar')]";
     public static String idBtnLimpar = "//button[contains(@id, 'limpar')]";
-    public static String idBtnFiltrar = "//div[contains(@id, 'btnInputFiltrar')]";
 
     //Xpath
     public static String xpathBusca = "//div[contains(@class, 'card-body')]//input[contains(@name, 'busca')]";
