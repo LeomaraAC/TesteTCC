@@ -13,9 +13,9 @@ public class AtendimentoPage extends Base {
 
     private Steps DadosAgendamentos(String data, String horaInicio, String horaFim, String responsavel, String tipo) {
         return new Steps()
-                .substituirValor(xpathData,data)
-                .escrever(xpathHoraInicial,horaInicio)
-                .escrever(xpathHoraFinal,horaFim)
+                .substituirValor(xpathData, data)
+                .escrever(xpathHoraInicial, horaInicio)
+                .escrever(xpathHoraFinal, horaFim)
                 .clicarCombo(xpathComboResponsavel, responsavel)
                 .clicarCombo(xpathComboTipo, tipo);
 
@@ -33,7 +33,7 @@ public class AtendimentoPage extends Base {
         )
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboFernando)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboLicenciaturaQuimica)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemErro, msgConflito);
@@ -53,11 +53,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboAlana)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboADS)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemErro, msgConflito);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -73,11 +73,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboHugo)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboTecnicoQuimica)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemErro, msgConflito);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -93,11 +93,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboHugo)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboLicenciaturaQuimica)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemErro, msgConflito);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -113,11 +113,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboAlana)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboADS)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemErro, msgConflito);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -133,11 +133,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboFabiana)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboTecnicoInformatica)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemErro, msgConflito);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -153,11 +153,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboFabiana)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboTecnicoInformatica)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemErro, msgConflito);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -173,11 +173,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboFabiana)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboTecnicoInformatica)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemErro, msgConflito);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -193,11 +193,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboAlana)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboADS)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemSucesso, msgSucessoInserir);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -213,11 +213,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboFernando)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboLicenciaturaQuimica)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemSucesso, msgSucessoInserir);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -233,11 +233,11 @@ public class AtendimentoPage extends Base {
                 .clicarBotao(xpathCheckBoxFamilia)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboFernando)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboLicenciaturaQuimica)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemSucesso, msgSucessoInserir);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -252,11 +252,11 @@ public class AtendimentoPage extends Base {
         )
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboFernando)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboLicenciaturaQuimica)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarBotao(idBtnSalvar)
                 .assertMSG(xpathMensagemSucesso, msgSucessoInserir);
-        status="OK";
+        status = "OK";
     }
 
     @Test
@@ -266,7 +266,7 @@ public class AtendimentoPage extends Base {
                 .escrever(xpathHoraInicial, hora1715)
                 .escrever(xpathHoraFinal, hora1700)
                 .clicarBotao(idBtnSalvar)
-                .assertMSG(xpathLabelCampoErroHoraFinal,msgErroHoraFinlInferior);
+                .assertMSG(xpathLabelCampoErroHoraFinal, msgErroHoraFinlInferior);
         status = "OK";
     }
 
@@ -276,10 +276,10 @@ public class AtendimentoPage extends Base {
         new Steps()
                 .clicarBotao(idBtnLimpar)
                 .clicarBotao(idBtnSalvar)
-                .assertMSG(xpathMensagemErro,msgErroAlunoObrigatorio)
+                .assertMSG(xpathMensagemErro, msgErroAlunoObrigatorio)
                 .assertMSG(xpathLabelCampoErroData, msgErroDataObrigatoria)
                 .assertMSG(xpathLabelCampoErroHoraInicial, msgErroHoraInicialObrigatorio)
-                .assertMSG(xpathLabelCampoErroHoraFinal,msgErroHoraFinalObrigatorio)
+                .assertMSG(xpathLabelCampoErroHoraFinal, msgErroHoraFinalObrigatorio)
                 .assertMSG(xpathLabelCampoErroResponsavel, msgErroResponsavelObrigatorio)
                 .assertMSG(xpathLabelCampoErroTipo, msgErroTipoObrigatorio);
         status = "OK";
@@ -303,7 +303,7 @@ public class AtendimentoPage extends Base {
                 .escrever(xpathHoraFinal, horaFinalInvalida)
                 .removerFocus(xpathHoraFinal)
                 .assertMSG(xpathLabelCampoErroHoraInicial, msgErroHoraInicialInvalida)
-                .assertMSG(xpathLabelCampoErroHoraFinal,msgErroHoraFinalInvalida);
+                .assertMSG(xpathLabelCampoErroHoraFinal, msgErroHoraFinalInvalida);
         status = "OK";
     }
 
@@ -319,11 +319,23 @@ public class AtendimentoPage extends Base {
         )
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboAlana)
                 .clicarCombo(xpathComboCurso, xpathOpcaoComboADS)
-                .substituirValor(xpathSemestre,semestre)
+                .substituirValor(xpathSemestre, semestre)
                 .clicarBotao(xpathAdicionarAluno)
                 .clicarCombo(xpathComboAluno, xpathOpcaoComboAlana)
                 .assertMSG(xpathLabelCampoErroAluno, msgErroAlunoAllanaExistente);
         status = "OK";
+    }
+
+    @Test
+    public void testCancelarAgendamento() throws InterruptedException {
+        menu.acessarTelaAgendamento();
+        //.clicarCelula(idColunaEditar, colunaBusca, descricaoExistente, xpathTabela, xpathByClickEditar, xpathPagination)
+        new Steps()
+                .filtrar(xpathBusca, horaCancelar)
+                .clicarCelula(idColunaCancelar, colunaBuscar, statusAgendada, xpathTabelaAgendamento, xpathClickCancelar, xpathPagination)
+                .clicarBotao(btnConfirmar);
+//                .verificarElementoTabela(colunaBuscaPermissoes, permissao, xpathTabelaAgendamento, xpathPagination);
+
     }
 
 

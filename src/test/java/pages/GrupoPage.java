@@ -143,6 +143,17 @@ public class GrupoPage extends Base {
         status = "OK";
     }
 
+    @Ignore
+    public void testIncerirMaximoCaracterNome() {
+        menu.acessarTelaInserirGrupo();
+        Steps step = new Steps()
+                .escrever(idNome, nomeMaximo)
+                .removerFocus(idNome)
+                .clicarBotao(idBtnSalvar)
+                .assertMSG(xpathErroCampoNome, msgNomeMinimo);
+        // Pegar o valor que está no campo e comparar com o que é esperado (no caso só os 60 caracteres, ignorando o resto)
+        status = "OK";
+    }
 
     @Test
     public void testInserirGrupoNumeros() throws InterruptedException {

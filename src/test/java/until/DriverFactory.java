@@ -17,7 +17,7 @@ public class DriverFactory {
 
     public static WebDriver getDriver() {
         return threadDrive.get();
-    };
+    }
 
     public static WebDriver initDrive() {
         WebDriver driver = null;

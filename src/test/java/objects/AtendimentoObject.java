@@ -19,7 +19,9 @@ public class AtendimentoObject {
     public static String hora1925 = "1925";
     public static String hora1940 = "1940";
     public static String hora2000 = "2000";
+    public static String horaCancelar = "19:20";
     public static String semestre = "2";
+    public static String statusAgendada = "Agendada";
 
     //Xpath dos campos
     public static String xpathData = "//input[contains(@id,'data')]";
@@ -69,4 +71,10 @@ public class AtendimentoObject {
     public static String msgErroResponsavelObrigatorio = "O campo responsável é obrigatório.";
     public static String msgErroTipoObrigatorio = "O campo tipo é obrigatório.";
     public static String msgSucessoInserir = "Reunião agendada com sucesso!";
+
+    //Tabela
+    public static String xpathTabelaAgendamento = "//table";
+    public static String xpathClickCancelar = "//i";
+    public static int idColunaCancelar = 2;
+    public static String colunaBuscar = "Status";
 }
